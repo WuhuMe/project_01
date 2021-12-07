@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            margin: 100px auto;
+            background: url('../images/bg.jpg') no-repeat;
+            height: 600px;
+            width: 1366px;
+            overflow: hidden;
+        }
+
+        /*伪元素*/
+        .content::before,
+        .content::after {
+            content: '';
+            width: 50%;
+            height: 600px;
+            background: url('../images/fm.jpg');
+            float: left;
+            transition: all .5s;
+        }
+
+        .content::after {
+            background-position: right 0;
+        }
+
+        .content:hover::before {
+            transform: translate(-100%);
+        }
+
+        .content:hover::after {
+            transform: translate(100%);
+        }
+
+        /* .r {
+            right: 0;
+            float: left;
+            height: 270px;
+            width: 235.5px;
+            background: url('../images/1.jpg') no-repeat;
+            transition: all 0.5s;
+        }
+
+        .l {
+            float: left;
+            left: 0;
+            height: 270px;
+            width: 235.5px;
+            background: url('../images/1.jpg') no-repeat;
+            transition: all 0.5s;
+
+        }
+
+        .content:hover .r {
+            transform: translate(-100%);
+            z-index: -999;
+        }
+
+        .content:hover .l {
+            transform: translate(100%);
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <!-- <div class="r"></div>
+        <div class="l"></div> -->
+    </div>
+</body>
+
+</html>
